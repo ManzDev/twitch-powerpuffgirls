@@ -91,6 +91,18 @@ class PowerPuffTrail extends HTMLElement {
             shine 2s ease-in-out infinite alternate, tail-bubbles 5s infinite linear;            
       }
 
+      :host(.buttercup) .container{
+        background: linear-gradient(to bottom, #63c253 0, transparent 100%),
+          linear-gradient(35deg, transparent 55%,#9DDA46 55% 75%, transparent 75%),
+          linear-gradient(-35deg, transparent 25%,#9DDA46 25% 45%, transparent 45%);
+        background-position: 0 0,0 0,0 0;
+        background-size: 300% 300%,
+          100% var(--background-detail-size), 
+          100% var(--background-detail-size);;
+        animation:
+            shine 2s ease-in-out infinite alternate, tail-buttercup 5s infinite linear;   
+      }
+
       @keyframes shine {
         from {
           box-shadow: 0 0 5px 8px #fff;
@@ -128,6 +140,14 @@ class PowerPuffTrail extends HTMLElement {
               0 calc(var(--background-detail-size) * 6),
               0 calc(var(--background-detail-size) * 6),
               0 calc(var(--background-detail-size) * 6);
+        }
+      }
+
+      @keyframes tail-buttercup{
+        to{
+            background-position: 0 0 ,
+            0 calc(var(--background-detail-size) * 6),
+            0 calc(var(--background-detail-size) * 6);
         }
       }
     `;
