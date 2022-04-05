@@ -63,6 +63,34 @@ class PowerPuffTrail extends HTMLElement {
           shine 2s ease-in-out infinite alternate, tail-blossom 5s infinite linear;
       }
 
+      :host(.bubbles) .container{
+        background:
+          linear-gradient(to bottom, var(--power-puff-color) 0, transparent 25%),
+          radial-gradient(20px 50px at 20% 25px, #39C6F1 50%, transparent 0),
+          radial-gradient(15px 40px at 25% 80px, #A0E5F0 50%, transparent 0),
+          radial-gradient(30px 50px at 35% 140px, #39C6F1 50%, transparent 0),
+          radial-gradient(30px 40px at 20% 200px, #A0E5F0 50%, transparent 0),
+          radial-gradient(40px 60px at 60% 30px, #A0E5F0 50%, transparent 0),
+          radial-gradient(22px 22px at 50% 80px, #39C6F1 50%, transparent 0),
+          radial-gradient(20px 40px at 80% 80px, #A0E5F0 50%, transparent 0),
+          radial-gradient(12px 12px at 50% 110px, #39C6F1 50%, transparent 0),
+          radial-gradient(30px 50px at 75% 140px, #39C6F1 50%, transparent 0),
+          radial-gradient(40px 40px at 70% 200px, #39C6F1 50%, transparent 0);
+          background-size: 300% 300%, 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size);
+          animation:
+            shine 2s ease-in-out infinite alternate, tail-bubbles 5s infinite linear;            
+      }
+
       @keyframes shine {
         from {
           box-shadow: 0 0 5px 8px #fff;
@@ -83,6 +111,23 @@ class PowerPuffTrail extends HTMLElement {
               55% calc(var(--background-detail-size) * 6),
               10% calc(var(--background-detail-size) * 6), 
               92% calc(var(--background-detail-size) * 6);  
+        }
+      }
+
+      @keyframes tail-bubbles{
+        to{
+            background-position: 0 0 ,
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6);
         }
       }
     `;
