@@ -80,7 +80,7 @@ class BlossomPowerPuffGirl extends HTMLElement {
       </div>
       <power-puff-blossom-back-hair></power-puff-blossom-back-hair>
       <power-puff-girl class="blossom"></power-puff-girl>
-      <power-puff-trail></power-puff-trail>
+      <power-puff-trail class="blossom"></power-puff-trail>
     </div>`;
   }
 }
