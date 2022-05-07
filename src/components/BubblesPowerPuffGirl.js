@@ -44,7 +44,7 @@ class BubblesPowerPuffGirl extends HTMLElement {
         <power-puff-pony-tail class="right"></power-puff-pony-tail>
       </div>
       <power-puff-girl class="bubbles"></power-puff-girl>
-      <power-puff-trail></power-puff-trail>
+      <power-puff-trail class="bubbles"></power-puff-trail>
     </div>`;
   }
 }

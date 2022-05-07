@@ -55,7 +55,7 @@ class ButtercupPowerPuffGirl extends HTMLElement {
         <div class="right hairbun"></div>
       </div>
       <power-puff-girl class="buttercup"></power-puff-girl>
-      <power-puff-trail></power-puff-trail>
+      <power-puff-trail class="buttercup"></power-puff-trail>
     </div>`;
   }
 }
