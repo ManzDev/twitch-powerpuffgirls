@@ -1,4 +1,4 @@
-const b=function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))f(t);new MutationObserver(t=>{for(const e of t)if(e.type==="childList")for(const i of e.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&f(i)}).observe(document,{childList:!0,subtree:!0});function u(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerpolicy&&(e.referrerPolicy=t.referrerpolicy),t.crossorigin==="use-credentials"?e.credentials="include":t.crossorigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function f(t){if(t.ep)return;t.ep=!0;const e=u(t);fetch(t.href,e)}};b();class o extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"})}static get styles(){return`
+const g=function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))u(t);new MutationObserver(t=>{for(const e of t)if(e.type==="childList")for(const a of e.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&u(a)}).observe(document,{childList:!0,subtree:!0});function b(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerpolicy&&(e.referrerPolicy=t.referrerpolicy),t.crossorigin==="use-credentials"?e.credentials="include":t.crossorigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function u(t){if(t.ep)return;t.ep=!0;const e=b(t);fetch(t.href,e)}};g();class i extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}static get styles(){return`
       :host {
         width: calc(var(--width) * 0.65);
         height: 100%;
@@ -42,13 +42,13 @@ const b=function(){const r=document.createElement("link").relList;if(r&&r.suppor
         transform: translateX(60%);
       }
     `}connectedCallback(){this.render()}render(){this.shadowRoot.innerHTML=`
-    <style>${o.styles}</style>
+    <style>${i.styles}</style>
     <div class="iris">
       <div class="pupil">
         <div class="shine"></div>
       </div>
     </div>
-    `}}customElements.define("power-puff-eye",o);class a extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"})}static get styles(){return`
+    `}}customElements.define("power-puff-eye",i);class o extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}static get styles(){return`
       :host {
         --width: 30px;
         --height: 30px;
@@ -96,10 +96,10 @@ const b=function(){const r=document.createElement("link").relList;if(r&&r.suppor
         border-radius: 15% 15% 50% 50%;
       }
     `}connectedCallback(){this.render()}render(){this.shadowRoot.innerHTML=`
-    <style>${a.styles}</style>
+    <style>${o.styles}</style>
     <div class="shoe">
       <div class="sock"></div>
-    </div>`}}customElements.define("power-puff-leg",a);class s extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"})}static get styles(){return`
+    </div>`}}customElements.define("power-puff-leg",o);class s extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}static get styles(){return`
       :host {
         --skin-color: #f4cfb4;
         --border-size: 3px;
@@ -349,7 +349,7 @@ const b=function(){const r=document.createElement("link").relList;if(r&&r.suppor
         <power-puff-leg class="left"></power-puff-leg>
         <power-puff-leg class="right up"></power-puff-leg>
       </div>
-    </div>`}}customElements.define("power-puff-girl",s);class l extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"})}static get styles(){return`
+    </div>`}}customElements.define("power-puff-girl",s);class n extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}static get styles(){return`
       :host {
         --ponytail-width: calc(var(--width) * 0.55);
         --ponytail-height: calc(var(--width) * 0.35);
@@ -429,7 +429,7 @@ const b=function(){const r=document.createElement("link").relList;if(r&&r.suppor
         transform: translateX(15%) rotate(15deg);
       }
     `}connectedCallback(){this.render()}render(){this.shadowRoot.innerHTML=`
-    <style>${l.styles}</style>
+    <style>${n.styles}</style>
     <div class="container">
       <div class="ball ball-1"></div>
       <div class="hair">
@@ -437,10 +437,11 @@ const b=function(){const r=document.createElement("link").relList;if(r&&r.suppor
         <div class="semi-circle"></div>
       </div>
       <div class="ball ball-2"></div>
-    </div>`}}customElements.define("power-puff-pony-tail",l);class d extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"})}static get styles(){return`
+    </div>`}}customElements.define("power-puff-pony-tail",n);class d extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}static get styles(){return`
       :host {
         --width: 100%;
         --height: 100vh;
+        --background-detail-size: 240px;
 
         width: var(--width);
         height: var(--height);
@@ -454,12 +455,84 @@ const b=function(){const r=document.createElement("link").relList;if(r&&r.suppor
       .container {
         width: 60%;
         height: 100%;
-        background:
-          linear-gradient(to bottom, var(--power-puff-color) 0, transparent 25%);
         background-size: 300% 300%;
+        background-repeat: repeat-y;
+      }
 
+      :host(.blossom) .container{
+        background:
+          linear-gradient(to bottom, var(--power-puff-color) 0, transparent 25%),
+          linear-gradient(to bottom, transparent 10%,#F687C1 10% 60%, transparent 60%),
+          linear-gradient(to bottom, transparent 5%,#F687C1 5% 30%, transparent 30%),
+          linear-gradient(to bottom, transparent 35%,#F687C1 35% 70%, transparent 70%),
+          linear-gradient(to bottom, transparent 10%,#F687C1 10% 65%, transparent 65%),
+          linear-gradient(to bottom, transparent 65%,#F687C1 65% 75%, transparent 75%),
+          linear-gradient(to bottom, transparent 75%,#F687C1 75% 95%, transparent 95%),
+          linear-gradient(to bottom, transparent 80%,#F687C1 80% 98%, transparent 98%),
+          linear-gradient(to bottom, transparent 70%,#F687C1 70% 98%, transparent 98%);
+        background-size: 300% 300%, 
+            30% var(--background-detail-size), 
+            20% var(--background-detail-size), 
+            25% var(--background-detail-size),
+            20% var(--background-detail-size), 
+            30% var(--background-detail-size),
+            22% var(--background-detail-size), 
+            28% var(--background-detail-size),
+            20% var(--background-detail-size);
+        background-repeat: repeat-y,
+            repeat-y,
+            repeat-y,
+            repeat-y,
+            repeat-y,
+            repeat-y,
+            repeat-y,
+            repeat-y,
+            repeat-y,
+            repeat-y;
+        background-position: 0 0, 10% 0, 60% 0, 58% 0, 95% 0, 
+          10% 0, 55% 0, 10% 0, 92% 0;
         animation:
-          shine 2s ease-in-out infinite alternate;
+          shine 2s ease-in-out infinite alternate, tail-blossom 5s infinite linear;
+      }
+
+      :host(.bubbles) .container{
+        background:
+          linear-gradient(to bottom, var(--power-puff-color) 0, transparent 25%),
+          radial-gradient(20px 50px at 20% 25px, #39C6F1 50%, transparent 0),
+          radial-gradient(15px 40px at 25% 80px, #A0E5F0 50%, transparent 0),
+          radial-gradient(30px 50px at 35% 140px, #39C6F1 50%, transparent 0),
+          radial-gradient(30px 40px at 20% 200px, #A0E5F0 50%, transparent 0),
+          radial-gradient(40px 60px at 60% 30px, #A0E5F0 50%, transparent 0),
+          radial-gradient(22px 22px at 50% 80px, #39C6F1 50%, transparent 0),
+          radial-gradient(20px 40px at 80% 80px, #A0E5F0 50%, transparent 0),
+          radial-gradient(12px 12px at 50% 110px, #39C6F1 50%, transparent 0),
+          radial-gradient(30px 50px at 75% 140px, #39C6F1 50%, transparent 0),
+          radial-gradient(40px 40px at 70% 200px, #39C6F1 50%, transparent 0);
+          background-size: 300% 300%, 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size), 
+            100% var(--background-detail-size);
+          animation:
+            shine 2s ease-in-out infinite alternate, tail-bubbles 5s infinite linear;            
+      }
+
+      :host(.buttercup) .container{
+        background: linear-gradient(to bottom, #63c253 0, transparent 100%),
+          linear-gradient(35deg, transparent 55%,#9DDA46 55% 75%, transparent 75%),
+          linear-gradient(-35deg, transparent 25%,#9DDA46 25% 45%, transparent 45%);
+        background-position: 0 0,0 0,0 0;
+        background-size: 300% 300%,
+          100% var(--background-detail-size), 
+          100% var(--background-detail-size);;
+        animation:
+            shine 2s ease-in-out infinite alternate, tail-buttercup 5s infinite linear;   
       }
 
       @keyframes shine {
@@ -471,10 +544,48 @@ const b=function(){const r=document.createElement("link").relList;if(r&&r.suppor
           box-shadow: 0 0 5px 2px #fff;
         }
       }
+
+      @keyframes tail-blossom{
+        to{
+            background-position: 0 0, 10% calc(var(--background-detail-size) * 6), 
+              60% calc(var(--background-detail-size) * 6), 
+              58% calc(var(--background-detail-size) * 6), 
+              95% calc(var(--background-detail-size) * 6), 
+              10% calc(var(--background-detail-size) * 6),
+              55% calc(var(--background-detail-size) * 6),
+              10% calc(var(--background-detail-size) * 6), 
+              92% calc(var(--background-detail-size) * 6);  
+        }
+      }
+
+      @keyframes tail-bubbles{
+        to{
+            background-position: 0 0 ,
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6),
+              0 calc(var(--background-detail-size) * 6);
+        }
+      }
+
+      @keyframes tail-buttercup{
+        to{
+            background-position: 0 0 ,
+            0 calc(var(--background-detail-size) * 6),
+            0 calc(var(--background-detail-size) * 6);
+        }
+      }
     `}connectedCallback(){this.render()}render(){this.shadowRoot.innerHTML=`
     <style>${d.styles}</style>
     <div class="container">
-    </div>`}}customElements.define("power-puff-trail",d);class n extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"})}static get styles(){return`
+    </div>`}}customElements.define("power-puff-trail",d);class l extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}static get styles(){return`
       :host {
         --width: 225px;
         --height: calc(var(--width) + calc(var(--width) * 0.3));
@@ -494,15 +605,15 @@ const b=function(){const r=document.createElement("link").relList;if(r&&r.suppor
         position: absolute;
       }
     `}connectedCallback(){this.render()}render(){this.shadowRoot.innerHTML=`
-    <style>${n.styles}</style>
+    <style>${l.styles}</style>
     <div class="container">
       <div class="ponytails">
         <power-puff-pony-tail class="left"></power-puff-pony-tail>
         <power-puff-pony-tail class="right"></power-puff-pony-tail>
       </div>
       <power-puff-girl class="bubbles"></power-puff-girl>
-      <power-puff-trail></power-puff-trail>
-    </div>`}}customElements.define("bubbles-power-puff-girl",n);class h extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"})}static get styles(){return`
+      <power-puff-trail class="bubbles"></power-puff-trail>
+    </div>`}}customElements.define("bubbles-power-puff-girl",l);class c extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}static get styles(){return`
       :host {
         --hair-width: 60%;
         --hair-height: calc(var(--width) * 0.5);
@@ -556,10 +667,10 @@ const b=function(){const r=document.createElement("link").relList;if(r&&r.suppor
         right: 0;
       }
     `}connectedCallback(){this.render()}render(){this.shadowRoot.innerHTML=`
-    <style>${h.styles}</style>
+    <style>${c.styles}</style>
     <div class="square"></div>
     <div class="semi-circle"></div>
-    `}}customElements.define("power-puff-blossom-back-hair",h);class c extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"})}static get styles(){return`
+    `}}customElements.define("power-puff-blossom-back-hair",c);class p extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}static get styles(){return`
       :host {
         --width: 225px;
         --height: calc(var(--width) + calc(var(--width) * 0.3));
@@ -613,7 +724,7 @@ const b=function(){const r=document.createElement("link").relList;if(r&&r.suppor
         border-radius: 50%;
       }
     `}connectedCallback(){this.render()}render(){this.shadowRoot.innerHTML=`
-    <style>${c.styles}</style>
+    <style>${p.styles}</style>
     <div class="container">
       <div class="ribbons">
         <div class="left ribbon"></div>
@@ -622,8 +733,8 @@ const b=function(){const r=document.createElement("link").relList;if(r&&r.suppor
       </div>
       <power-puff-blossom-back-hair></power-puff-blossom-back-hair>
       <power-puff-girl class="blossom"></power-puff-girl>
-      <power-puff-trail></power-puff-trail>
-    </div>`}}customElements.define("blossom-power-puff-girl",c);class p extends HTMLElement{constructor(){super();this.attachShadow({mode:"open"})}static get styles(){return`
+      <power-puff-trail class="blossom"></power-puff-trail>
+    </div>`}}customElements.define("blossom-power-puff-girl",p);class h extends HTMLElement{constructor(){super(),this.attachShadow({mode:"open"})}static get styles(){return`
       :host {
         --width: 225px;
         --height: calc(var(--width) + calc(var(--width) * 0.3));
@@ -655,12 +766,12 @@ const b=function(){const r=document.createElement("link").relList;if(r&&r.suppor
         transform: translateX(-10%) rotate(-10deg) scaleX(-1);
       }
     `}connectedCallback(){this.render()}render(){this.shadowRoot.innerHTML=`
-    <style>${p.styles}</style>
+    <style>${h.styles}</style>
     <div class="container">
       <div class="hairbuns">
         <div class="left hairbun"></div>
         <div class="right hairbun"></div>
       </div>
       <power-puff-girl class="buttercup"></power-puff-girl>
-      <power-puff-trail></power-puff-trail>
-    </div>`}}customElements.define("buttercup-power-puff-girl",p);
+      <power-puff-trail class="buttercup"></power-puff-trail>
+    </div>`}}customElements.define("buttercup-power-puff-girl",h);

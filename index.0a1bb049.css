@@ -1,1 +1,0 @@
-html{height:100vh}body{margin:0;background:linear-gradient(to top,#134e89,#05131d)}body,.container{height:100%}.container{display:flex;justify-content:center;align-items:center;gap:0 50px}.container>*{animation:float 1.5s ease-in-out infinite alternate}@keyframes float{0%{transform:translateY(0)}to{transform:translateY(30px)}}
